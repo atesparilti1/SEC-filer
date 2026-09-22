@@ -1,0 +1,76 @@
+{
+  "ticker": "META",
+  "company_name": "Meta Platforms, Inc.",
+  "cik": "0001326801",
+  "accession_number": "0001628280-26-003942",
+  "filing_type": "10-K",
+  "filing_date": "2026-01-29",
+  "report_date": "2025-12-31",
+  "primary_document": "meta-20251231.htm",
+  "analysis": {
+    "executive_summary": "Our mission is to build the future of human connection and the technology that makes it possible. Our financial results and key Family metrics for 2025 are set forth below. Total revenue for 2025 was $200.97 billion, an increase of 22% compared to 2024, due to an increase in advertising revenue. Ad impressions delivered across our Family of Apps in 2025 increased 12% year-over-year, and our average price per ad increased 9% year-over-year. We are making significant investments in AI, including generative AI, to improve our delivery, targeting, and measurement capabilities, and we are also investing in Reels and in AI initiatives across our products, including our AI-powered discovery engine to recommend relevant content.",
+    "key_risks": [
+      {
+        "title": "User Retention and Growth",
+        "description": "If we fail to retain existing users or add new users, or if our users decrease their level of engagement with our products, our revenue, financial results, and business may be significantly harmed.",
+        "severity": "High",
+        "evidence": "Our size of active user base and our users' level of engagement across our products are critical to our success. Our financial performance has been and will continue to be significantly determined by our success in adding, retaining, and engaging active users of our products that deliver ad impressions, particularly for Facebook and Instagram."
+      },
+      {
+        "title": "Advertising Revenue",
+        "description": "Our advertising revenue has been, and we expect will continue to be, adversely affected by reduced marketer spending as a result of limitations on our ad targeting and measurement tools arising from changes to the regulatory environment and third-party mobile operating systems and browsers.",
+        "severity": "High",
+        "evidence": "Legislative and regulatory developments such as the General Data Protection Regulation, including its evolving interpretation through decisions of the Court of Justice of the European Union, ePrivacy Directive, European Digital Services Act, Digital Markets Act, and U.S. state privacy laws have impacted our ability to use data signals in our ad products, and an increasing number of laws have been introduced limiting or prohibiting the provision of our services to younger users."
+      },
+      {
+        "title": "Competition",
+        "description": "We compete with companies providing connection, sharing, discovery, and communication products and services to users online, as well as companies that sell advertising to businesses looking to reach consumers and/or develop tools and systems for managing and optimizing advertising campaigns.",
+        "severity": "Medium",
+        "evidence": "We face significant competition in every aspect of our business, including, but not limited to, companies that facilitate the ability of users to create, share, communicate, and discover content and information online or enable marketers to reach their existing or prospective audiences."
+      }
+    ],
+    "growth_opportunities": [
+      {
+        "title": "Artificial Intelligence (AI)",
+        "description": "We are making significant investments in AI, including generative AI, to improve our delivery, targeting, and measurement capabilities.",
+        "evidence": "We are developing privacy enhancing technologies to deliver relevant ads and measurement capabilities while reducing the amount of personal information we process, including by relying more on anonymized or aggregated third-party data."
+      },
+      {
+        "title": "Reels and AI-Powered Discovery Engine",
+        "description": "We are investing in Reels and in AI initiatives across our products, including our AI-powered discovery engine to recommend relevant content, which we have already seen results in improved user engagement and monetization of our products.",
+        "evidence": "We are developing tools that enable marketers to share their data into our systems, as well as ad products that generate more valuable signals within our apps."
+      }
+    ],
+    "financial_insights": [
+      {
+        "metric": "Revenue",
+        "observation": "Our revenue has been increasing steadily over the years, with a 22% increase in 2025 compared to 2024.",
+        "interpretation": "This growth is driven by an increase in advertising revenue, which is our primary source of revenue."
+      },
+      {
+        "metric": "Net Income",
+        "observation": "Our net income was $60.46 billion in 2025, with a diluted earnings per share (EPS) of $23.49.",
+        "interpretation": "This represents a significant increase in net income compared to previous years, driven by the growth in revenue and operating income."
+      }
+    ],
+    "management_priorities": [
+      "AI",
+      "Reels and AI-Powered Discovery Engine",
+      "Wearables",
+      "Monetization of Products and Services",
+      "Youth",
+      "Platform Integrity and Community Support",
+      "Infrastructure Capacity"
+    ],
+    "red_flags": [
+      "Our Reality Labs segment is expected to continue to operate at a loss for the foreseeable future.",
+      "We are investing approximately 70% of our Reality Labs operating expenses on our wearables initiatives, and the remaining 30% on our VR and Horizon initiatives.",
+      "We expect to face additional competition as we introduce or acquire new products, as our existing products evolve, or as other companies introduce new products and services."
+    ],
+    "positive_signals": [
+      "Our Family of Apps segment reported a 22% increase in revenue in 2025 compared to 2024.",
+      "Our net income was $60.46 billion in 2025, with a diluted earnings per share (EPS) of $23.49.",
+      "We are making significant investments in AI, including generative AI, to improve our delivery, targeting, and measurement capabilities."
+    ]
+  }
+}

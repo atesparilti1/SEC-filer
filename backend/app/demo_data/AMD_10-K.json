@@ -1,0 +1,88 @@
+{
+  "ticker": "AMD",
+  "company_name": "ADVANCED MICRO DEVICES INC",
+  "cik": "0000002488",
+  "accession_number": "0000002488-26-000018",
+  "filing_type": "10-K",
+  "filing_date": "2026-02-04",
+  "report_date": "2025-12-27",
+  "primary_document": "amd-20251227.htm",
+  "analysis": {
+    "executive_summary": "AMD delivered strong annual revenue growth in 2025, driven by the performance of our Data Center and Client and Gaming segments. We continue to execute our AI strategy, investing in software capabilities and the open ecosystem. However, we face risks related to highly competitive and rapidly evolving markets, highly cyclical semiconductor industry, and dependence on significant customers. We also face challenges related to inventory and related charges associated with U.S. government export control on AMD Instinct\u2122 MI308 Data Center GPU products and potential impact of U.S. government regulations on revenue generated from licensed MI308 sales to China.",
+    "key_risks": [
+      {
+        "title": "Highly competitive and rapidly evolving markets",
+        "description": "The markets in which our products are sold are highly competitive and rapidly evolving.",
+        "severity": "High",
+        "evidence": "Economic and Strategic Risks"
+      },
+      {
+        "title": "Highly cyclical semiconductor industry",
+        "description": "The semiconductor industry is highly cyclical and has experienced severe downturns.",
+        "severity": "High",
+        "evidence": "Economic and Strategic Risks"
+      },
+      {
+        "title": "Dependence on significant customers",
+        "description": "The loss of a significant customer may have a material adverse effect on us.",
+        "severity": "Medium",
+        "evidence": "Economic and Strategic Risks"
+      },
+      {
+        "title": "Intellectual property protection",
+        "description": "If we cannot adequately protect our technology or other intellectual property through patents, copyrights, trade secrets, trademarks and other measures, we may lose a competitive advantage and incur significant expenses.",
+        "severity": "Medium",
+        "evidence": "Operational and Technology Risks"
+      },
+      {
+        "title": "Cybersecurity risks",
+        "description": "Our products may be subject to security vulnerabilities that could have a material adverse effect on us.",
+        "severity": "Medium",
+        "evidence": "Operational and Technology Risks"
+      }
+    ],
+    "growth_opportunities": [
+      {
+        "title": "Growing demand for AI infrastructure",
+        "description": "The growth of AI is further creating pressure on the semiconductor industry to timely design, manufacture and deliver semiconductor products and solutions to meet customer demand for computing power and AI infrastructure.",
+        "evidence": "Economic and Strategic Risks"
+      },
+      {
+        "title": "Increasing adoption of cloud computing",
+        "description": "The development of the legal and regulatory environment relating to emerging technologies such as AI is expected to have implications for our business.",
+        "evidence": "Business"
+      },
+      {
+        "title": "Growing demand for high-performance computing",
+        "description": "Our high-performance product portfolios provide differentiated solutions, including semi-custom System-on-Chip (SoCs), adaptive SoCs and accelerated processing units (APUs).",
+        "evidence": "Business"
+      }
+    ],
+    "financial_insights": [
+      {
+        "metric": "Revenue",
+        "observation": "Revenue increased 34% to $34.6 billion in 2025 compared to $25.8 billion in 2024.",
+        "interpretation": "The increase in revenue is driven by strong demand for our Data Center and Client and Gaming segments."
+      },
+      {
+        "metric": "Gross margin",
+        "observation": "Gross margin of 50% increased by 1% compared to 49% in 2024.",
+        "interpretation": "The increase in gross margin is primarily due to product mix partially offset by approximately $440 million of net inventory and related charges associated with the U.S. government export control on AMD Instinct\u2122 MI308 Data Center GPU products."
+      }
+    ],
+    "management_priorities": [
+      "Accelerating growth in the Data Center segment",
+      "Executing our AI strategy",
+      "Continuing to invest in software capabilities and the open ecosystem"
+    ],
+    "red_flags": [
+      "Inventory and related charges associated with U.S. government export control on AMD Instinct\u2122 MI308 Data Center GPU products",
+      "Potential impact of U.S. government regulations on revenue generated from licensed MI308 sales to China"
+    ],
+    "positive_signals": [
+      "Strong demand for our Data Center and Client and Gaming segments",
+      "Increasing adoption of cloud computing and AI infrastructure",
+      "Growing demand for high-performance computing"
+    ]
+  }
+}
