@@ -97,6 +97,35 @@ def test_deduplicates_restated_values_using_most_recently_filed():
     assert periods[0].revenue == 95_000_000
 
 
+def test_merges_periods_across_tags_when_filer_switches_tag():
+    # NVIDIA-style history: older years under one tag, recent years under another.
+    facts = {
+        "facts": {
+            "us-gaap": {
+                "RevenueFromContractWithCustomerExcludingAssessedTax": _annual_fact(
+                    [
+                        ("2021-01-01", "2022-01-01", 100_000_000, "2022-02-01"),
+                        ("2022-01-02", "2023-01-01", 110_000_000, "2023-02-01"),
+                    ]
+                ),
+                "Revenues": _annual_fact(
+                    [
+                        # Overlapping year: the higher-priority tag above should win.
+                        ("2022-01-02", "2023-01-01", 999_000_000, "2023-02-01"),
+                        ("2023-01-02", "2024-01-01", 150_000_000, "2024-02-01"),
+                    ]
+                ),
+                "NetIncomeLoss": {"units": {"USD": []}},
+            }
+        }
+    }
+
+    periods = compute_annual_financials(facts)
+
+    assert [p.revenue for p in periods] == [100_000_000, 110_000_000, 150_000_000]
+    assert periods[-1].revenue_growth_yoy == pytest.approx(round(40_000_000 / 110_000_000, 4))
+
+
 def test_raises_when_no_usable_facts():
     with pytest.raises(FinancialDataUnavailableError):
         compute_annual_financials({"facts": {"us-gaap": {}}})

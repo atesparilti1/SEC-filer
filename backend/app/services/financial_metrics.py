@@ -83,14 +83,19 @@ def compute_annual_financials(company_facts: dict[str, Any], years: int = 6) -> 
     if not usgaap:
         raise FinancialDataUnavailableError("No us-gaap XBRL facts available for this company")
 
+    # Filers switch tags over time (NVIDIA reported revenue under
+    # RevenueFromContractWithCustomerExcludingAssessedTax until FY2022, then
+    # under Revenues), so merge candidates per period: each period end takes
+    # the highest-priority tag that reports it.
     metric_points: dict[str, dict[str, dict[str, Any]]] = {}
     for metric, tags in METRIC_TAGS.items():
         is_duration = metric in DURATION_METRICS
+        merged: dict[str, dict[str, Any]] = {}
         for tag in tags:
-            points = _annual_points_for_tag(usgaap, tag, is_duration)
-            if points:
-                metric_points[metric] = points
-                break
+            for end, point in _annual_points_for_tag(usgaap, tag, is_duration).items():
+                merged.setdefault(end, point)
+        if merged:
+            metric_points[metric] = merged
 
     if "revenue" not in metric_points and "net_income" not in metric_points:
         raise FinancialDataUnavailableError(
