@@ -31,6 +31,13 @@ def seed_demo_data(db: Session) -> int:
             db, payload["ticker"], payload["accession_number"], payload["filing_type"]
         )
         if existing is not None:
+            # A regenerated fixture replaces its stale demo row. Analyses the
+            # user ran live (is_demo=False) are never touched.
+            fresh = FilingAnalysis.model_validate(payload["analysis"]).model_dump_json()
+            if existing.is_demo and existing.analysis_json != fresh:
+                existing.analysis_json = fresh
+                db.commit()
+                seeded += 1
             continue
 
         cache.save_analysis(
