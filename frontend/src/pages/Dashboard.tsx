@@ -65,8 +65,10 @@ export function Dashboard() {
     <div className="mx-auto max-w-6xl space-y-10 px-6 py-8">
       <p className="text-sm text-text-secondary">
         <span className="font-medium text-text-primary">AAPL, NVDA, AMD, MSFT, and META</span> ship with
-        pre-generated demo analyses — pick one below for an instant result. Any other filing runs live
-        through the configured AI provider (a free local model via Ollama by default).
+        pre-generated demo analyses — pick one below for an instant result.{" "}
+        {import.meta.env.VITE_STATIC_DEMO === "1"
+          ? "This online demo shows those five; run the app locally to analyze any other filing with a free local model."
+          : "Any other filing runs live through the configured AI provider (a free local model via Ollama by default)."}
       </p>
 
       <Card>

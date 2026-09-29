@@ -41,7 +41,43 @@ async function request<T>(path: string, options?: RequestInit): Promise<T> {
   return response.json() as Promise<T>;
 }
 
-export const api = {
+// Online demo (GitHub Pages): no backend, so calls are answered from real API
+// responses snapshotted by backend/scripts/export_static_demo.py.
+const STATIC_DEMO = import.meta.env.VITE_STATIC_DEMO === "1";
+const DEMO_TICKERS = ["AAPL", "NVDA", "AMD", "MSFT", "META"];
+const LOCAL_ONLY =
+  "The online demo includes AAPL, NVDA, AMD, MSFT and META. Run the app locally to analyze any other company.";
+
+async function demoFile<T>(path: string): Promise<T> {
+  const response = await fetch(`${import.meta.env.BASE_URL}demo-api/${path}`);
+  if (!response.ok) throw new ApiError(LOCAL_ONLY, 404);
+  return response.json() as Promise<T>;
+}
+
+function demoTicker(ticker: string): string {
+  const t = ticker.trim().toUpperCase();
+  if (!DEMO_TICKERS.includes(t)) throw new ApiError(LOCAL_ONLY, 404);
+  return t;
+}
+
+const staticApi = {
+  getCompany: async (ticker: string) => demoFile<CompanyInfo>(`company/${demoTicker(ticker)}.json`),
+  getFilings: async (ticker: string) => demoFile<CompanyFilingsResponse>(`filings/${demoTicker(ticker)}.json`),
+  getFinancials: async (ticker: string) => demoFile<FinancialsResponse>(`financials/${demoTicker(ticker)}.json`),
+  analyze: async (ticker: string, accessionNumber: string) =>
+    demoFile<AnalysisRecord>(`analysis/${demoTicker(ticker)}-${accessionNumber}.json`),
+  getAnalysis: async (): Promise<AnalysisRecord> => {
+    throw new ApiError(LOCAL_ONLY, 404);
+  },
+  compare: async (): Promise<CompareResponse> => {
+    throw new ApiError(
+      "Comparing two filings runs the AI model live, so it is not part of the online demo. Run the app locally to use it.",
+      501,
+    );
+  },
+};
+
+const liveApi = {
   getCompany: (ticker: string) => request<CompanyInfo>(`/company/${ticker}`),
 
   getFilings: (ticker: string) =>
@@ -78,3 +114,5 @@ export const api = {
       }),
     }),
 };
+
+export const api = STATIC_DEMO ? staticApi : liveApi;

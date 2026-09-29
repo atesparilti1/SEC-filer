@@ -17,3 +17,6 @@ frontend/.vite/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Online demo build
+frontend/dist-demo/
