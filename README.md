@@ -1,5 +1,7 @@
 # SEC Filing Analyzer
 
+**Live demo:** https://atesparilti1.github.io/SEC-filer/ (the five demo companies; run it locally for any other ticker)
+
 AI-powered analysis of SEC 10-K and 10-Q filings. Enter a US public company's
 ticker, pick a filing, and get a structured breakdown of its business risks,
 growth opportunities, financial trends, and management priorities — grounded
@@ -21,11 +23,7 @@ higher-quality output.
 
 ## Screenshots
 
-> _Add screenshots of the dashboard, risk analysis view, and comparison view here._
-
-| Dashboard | Filing Comparison |
-| --- | --- |
-| `docs/screenshot-dashboard.png` | `docs/screenshot-compare.png` |
+![Analysis of NVIDIA's 10-K: revenue, net income, growth and margin from SEC XBRL, an executive summary, and key risks each backed by a quote from the filing](docs/screenshot-analysis.png)
 
 ## Why this matters
 
@@ -171,6 +169,14 @@ The app is now live at `http://127.0.0.1:5173` (the Vite dev server proxies
 cd backend
 pytest
 ```
+
+### Online demo build
+
+The [live demo](https://atesparilti1.github.io/SEC-filer/) is the same frontend with no
+backend behind it. `backend/scripts/export_static_demo.py` snapshots the real API
+responses for the five demo companies into `frontend/public/demo-api/`, and
+`npm run build:demo` builds the frontend to read them (`VITE_STATIC_DEMO=1`). Comparing
+two filings calls the AI model live, so it is only available when running locally.
 
 ## Environment Variables
 
